@@ -1,0 +1,5 @@
+rumps>=0.4.0
+requests>=2.31.0
+keyring>=24.0.0
+curl_cffi>=0.6.0
+
