@@ -3,9 +3,7 @@ from curl_cffi import requests as r
 from datetime import datetime, timezone
 from keychain import save_token, get_token
 from pprint import pprint
-
-
-
+from nuwan_colors import Colors
 
 
 def get_claude_data(token):
@@ -53,14 +51,14 @@ def main():
     token = get_token()
 
     if token is None:
-        token = input("Enter your Claude AI session token:")
+        token = input(Colors.green("Enter your Claude AI session token:"))
         save_token(token=token)
         print("Token saved successfully.")
 
 
     data = get_claude_data(token)
     if data is not None:
-        print(f"Plan: Claude {data['plan']}")
+        print(Colors.bg_blue(f"Plan: Claude {data['plan']}"))
 
 if __name__ == "__main__":
     main()
