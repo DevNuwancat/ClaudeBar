@@ -171,13 +171,11 @@ PRs welcome! Ideas for v2:
 
 ## Support
 
-If Claude Cap saved you from hitting your limits —
-
-☕ [Buy me a coffee](https://ko-fi.com/nuwancat) • $1 goes a long way!
+If Claude Cap saved you from hitting your limits — [ko-fi.com/nuwancat](https://ko-fi.com/nuwancat) $1 goes a long way!
 
 ---
 
-Made with ☕ in Sri Lanka by [nuwancat](https://github.com/DevNuwancat)
+Made with by [nuwancat](https://github.com/DevNuwancat)
 
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support-orange)](https://ko-fi.com/nuwancat)
 [![GitHub](https://img.shields.io/badge/GitHub-DevNuwancat-black)](https://github.com/DevNuwancat)
