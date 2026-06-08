@@ -1,10 +1,12 @@
-# Claude Cap 🤖
+# Claude Cap 
+
+![Claude Cap](https://i.imgur.com/Q98YYJR.png)
 
 > Know your cap before you hit it.
 
 A free, open source macOS menu bar app that shows your **Claude.ai usage in real time** — right where you need it.
 
-![Claude Cap Menu Bar](assets/screenshot.png)
+![Claude Cap Menu Bar](https://i.imgur.com/so7IVq9.png)
 
 ---
 
