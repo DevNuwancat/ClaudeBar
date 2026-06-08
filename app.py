@@ -10,29 +10,33 @@ class ClaudeBar(rumps.App):
         self.state_item  = rumps.MenuItem("Claude")
         self.session_item = rumps.MenuItem("5hr: —")
         self.weekly_item  = rumps.MenuItem("Weekly: —")
+        self.reset_main_item = rumps.MenuItem("◎ Reset")
         self.reset_item   = rumps.MenuItem("Resets: —")
         self.session_reset_item = rumps.MenuItem("  ↳ Resets in: —")
         self.weekly_reset_item = rumps.MenuItem("  ↳ Resets in: —")
         self.weekly_reset_date_item = rumps.MenuItem("↳ Resets Date: —")
         self.last_update_item = rumps.MenuItem("Updated: -")
-        self.refresh_item = rumps.MenuItem("Refresh Now", callback=self.refresh)
-        self.set_token_item = rumps.MenuItem("Set Session Token", callback=self.prompt_for_token)
-        self.github_item = rumps.MenuItem("Github(nuwancat)", callback=self.open_github)
-        self.ko_fi_item = rumps.MenuItem("♡ Buy me a coffee ($1)", callback=self.open_coffee)
+        self.refresh_item = rumps.MenuItem("↻ Refresh Now", callback=self.refresh)
+        self.set_token_item = rumps.MenuItem("❏ Set Session Token...", callback=self.prompt_for_token)
+        self.github_item = rumps.MenuItem("◉ Github ◦ nuwancat", callback=self.open_github)
+        self.ko_fi_item = rumps.MenuItem("♡ Buy me a coffee ◦ $1", callback=self.open_coffee)
 
         self.menu = [
             self.state_item, 
             None,
             self.session_item,
-            self.session_reset_item,
             self.weekly_item, 
-            self.weekly_reset_date_item,
+            None,
+            self.reset_main_item,
+            self.session_reset_item,
             self.weekly_reset_item,
+            self.weekly_reset_date_item,
             None,
             self.last_update_item,
             self.refresh_item,
             None,
             self.set_token_item,
+            None,
             self.github_item,
             self.ko_fi_item,
             None,
@@ -63,7 +67,7 @@ class ClaudeBar(rumps.App):
     def progress_bar(self, pct, width=12):
         filled = int(width * pct / 100)
         empty = width - filled
-        return "▩" * filled + "▤" * empty
+        return "▰" * filled + "▱" * empty
     
     def open_github(self, _):
         webbrowser.open("https://github.com/DevNuwancat")
@@ -93,16 +97,16 @@ class ClaudeBar(rumps.App):
 
         self.title = f" {session:.0f}%"
 
-        self.state_item.title  = f"Claude {plan} · Session {session:.0f}%"
-        self.session_item.title = f"5hr session  {self.progress_bar(session)} {session:.0f}%"
-        self.weekly_item.title  = f"Weekly limit {self.progress_bar(weekly)} {weekly:.0f}%"
+        self.state_item.title  = f"Claude {plan}"
+        self.session_item.title = f"5hr       {self.progress_bar(session)}     {session:.0f}%"
+        self.weekly_item.title  = f"Week    {self.progress_bar(weekly)}     {weekly:.0f}%"
         self.reset_item.title   = f"Resets in:    {time_unit(reset)}"
-        self.session_reset_item.title = f"  ↳ Resets in    :  {session_reset}"
-        self.weekly_reset_item.title =  f"  ↳ Resets in    :  {weekly_reset}"
-        self.weekly_reset_date_item.title = f"  ↳ Reset date :  {formatted}"
-        self.last_update_item.title = f"Updated at : {datetime.now().strftime('%-I:%M %p')}"
+        self.session_reset_item.title     = f"↳ 5hr                    {session_reset}"
+        self.weekly_reset_item.title      = f"↳ Week                {weekly_reset}"
+        self.weekly_reset_date_item.title = f"↳ Week (date)     {formatted}"
+        self.last_update_item.title = f"◔ Last Updated    {datetime.now().strftime('%-I:%M %p')}"
 
 
        
 
-ClaudeBar().run()
+ClaudeBar().run() 
