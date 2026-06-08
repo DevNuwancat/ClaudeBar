@@ -1,12 +1,25 @@
+import os
+import sys
 import rumps
 from api import get_claude_data, time_unit
 from keychain import get_token, save_token
 from datetime import datetime
 import webbrowser
 
+
+if getattr(sys, "frozen", False):
+    RESOURCES = os.path.join(os.path.dirname(sys.executable), '..', 'Resources')
+else:
+    RESOURCES = os.path.dirname(os.path.abspath(__file__))
+
+
+def asset(filename):
+    return os.path.join(RESOURCES, 'assets', filename)
+
+
 class ClaudeBar(rumps.App):
     def __init__(self):
-        super().__init__("", icon="assets/claudecode.png", template=True)
+        super().__init__("", icon=asset('claudecode.png'), template=True)
         self.state_item  = rumps.MenuItem("Claude")
         self.session_item = rumps.MenuItem("5hr: —")
         self.weekly_item  = rumps.MenuItem("Weekly: —")
