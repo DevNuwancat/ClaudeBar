@@ -7,3 +7,11 @@ __pycache__/
 dist/
 build/
 pormpt.md
+*.dmg
+rw.*.dmg
+dist/
+build/
+*.spec
+dist/
+build/
+*.spec
