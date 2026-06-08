@@ -66,6 +66,7 @@ class ClaudeBar(rumps.App):
 
     def progress_bar(self, pct, width=12):
         filled = int(width * pct / 100)
+        filled = max(1, min(width - 1, filled))
         empty = width - filled
         return "▰" * filled + "▱" * empty
     
