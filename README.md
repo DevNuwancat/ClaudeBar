@@ -73,11 +73,11 @@ Claude Cap needs your Claude.ai session token to read your usage. Here's how to 
 
 **Step 4** — In the left sidebar, click **Cookies** → `https://claude.ai`
 
-![Cookies Section]()
+![Cookies Section](https://i.imgur.com/jp19dmp.png)
 
 **Step 5** — Find `sessionKey` in the list and copy its full value
 
-![sessionKey Cookie]()
+![sessionKey Cookie](https://i.imgur.com/hO0RJhd.png)
 
 **Step 6** — Click the Claude Cap icon in your menu bar → **Set Session Token** → paste it → **Save**
 
